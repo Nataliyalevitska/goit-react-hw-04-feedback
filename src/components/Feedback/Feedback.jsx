@@ -1,10 +1,9 @@
-
 import React from "react";
-// import PropTypes from "prop-types";
+import Section from '../UI/Section';
 import FeedbackOptions from "./FeedbackOptions";
 import Statistics from "../../services/Statistics";
 import Notification from "../../services/Notification";
-import Section from "../../services/Section";
+
 
 class Feedback extends React.Component {
   state = {
