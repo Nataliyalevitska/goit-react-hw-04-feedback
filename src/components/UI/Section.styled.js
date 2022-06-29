@@ -8,7 +8,7 @@ export const SectionStyled = styled.section`
 
 export const Title = styled.h2`
   margin-bottom: 50px;
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 700;
   color: ${props => props.theme.colors.titleColor};
 `;

@@ -1,17 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { StyledButton } from './FeedbackOptions.styled';
+import {
+  HiEmojiHappy,
+  HiEmojiSad,
+  HiDotsCircleHorizontal,
+} from 'react-icons/hi';
+
 const FeedbackOptions = ({ onLeaveFeedback }) => {
   return (
     <div>
-      <button id="good" type="button" onClick={onLeaveFeedback}>
+      <StyledButton id="good" type="button" onClick={onLeaveFeedback}>
+        <HiEmojiHappy></HiEmojiHappy>
         Good
-      </button>
-      <button id="neutral" type="button" onClick={onLeaveFeedback}>
+      </StyledButton>
+
+      <StyledButton id="neutral" type="button" onClick={onLeaveFeedback}>
+        <HiDotsCircleHorizontal></HiDotsCircleHorizontal>
         Neutral
-      </button>
-      <button id="bad" type="button" onClick={onLeaveFeedback}>
+      </StyledButton>
+      <StyledButton id="bad" type="button" onClick={onLeaveFeedback}>
+        <HiEmojiSad></HiEmojiSad>
         Bad
-      </button>
+      </StyledButton>
     </div>
   );
 };

@@ -8,5 +8,8 @@ const theme = Object.freeze({
     titleColor: '#8CC0DE',
     border: '#FAF0D7',
   },
+  radii: {
+    normal: '4px',
+  },
 });
 export default theme;
