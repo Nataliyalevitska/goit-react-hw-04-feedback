@@ -1,12 +1,4 @@
 import styled from '@emotion/styled';
-// import { HiEmojiHappy } from 'react-icons/hi';
-
-// export const Button = ({ type = 'button', id, children }) => {
-//   return <StyledButton type={type}>{(id, children)}</StyledButton>;
-// };
-// допоможіть розібратися як правильно передати функцію
-// onClick = { onLeaveFeedback }
-//  щоб компонент button був перевикористованим ?
 
 export const StyledButton = styled.button`
   display: inline-flex;

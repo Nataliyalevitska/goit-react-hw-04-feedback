@@ -1,9 +1,8 @@
 import React from "react";
 import Section from '../UI/Section';
 import FeedbackOptions from "./FeedbackOptions";
-import Statistics from "../../services/Statistics";
-import Notification from "../../services/Notification";
-
+import Statistics from "../services/Statistics";
+import Notification from "../services/Notification";
 
 class Feedback extends React.Component {
   state = {
@@ -33,7 +32,7 @@ class Feedback extends React.Component {
     return (
       <div>
         <Section title="Please leave feedback">
-          <FeedbackOptions onLeaveFeedback={this.handleClick} />
+          <FeedbackOptions  onLeaveFeedback={this.handleClick} />
         </Section>
         <Section title="Statistics">
           {this.countTotalFeedback() ? (
