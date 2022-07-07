@@ -1,8 +1,9 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Section from '../UI/Section';
 import FeedbackOptions from "./FeedbackOptions";
-import Statistics from "../services/Statistics";
-import Notification from "../services/Notification";
+import Statistics from "../Statistics/Statistics";
+import Notification from "../Notification/Notification";
 
 class Feedback extends React.Component {
   state = {
@@ -10,29 +11,27 @@ class Feedback extends React.Component {
     neutral: 0,
     bad: 0,
   };
+    counterOfFeedback = (option) => {
+    this.setState(prevState => ({
+      [option]: prevState[option] + 1,
+    }));
 
-  handleClick = (e) => {
-    const name = e.target.id;
-    this.setState((prevState) => {
-      return {
-        [name]: prevState[name] + 1,
-      };
-    });
   };
   countTotalFeedback = () => {
-    return this.state.good + this.state.neutral + this.state.bad;
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
   };
   countPositiveFeedbackPercentage = () => {
-    return this.countTotalFeedback()
-      ? Math.round((this.state.good / this.countTotalFeedback()) * 100)
-      : 0;
+    const { good } = this.state;
+    return Math.round((good / this.countTotalFeedback()) * 100);
+    
   };
 
   render() {
     return (
       <div>
         <Section title="Please leave feedback">
-          <FeedbackOptions  onLeaveFeedback={this.handleClick} />
+          <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.counterOfFeedback} />
         </Section>
         <Section title="Statistics">
           {this.countTotalFeedback() ? (
@@ -53,3 +52,10 @@ class Feedback extends React.Component {
 }
 
 export default Feedback;
+Feedback.propTypes = {
+    good: PropTypes.number,
+    neutral: PropTypes.number,
+    bad: PropTypes.number,
+    total: PropTypes.number,
+    positivePercentage: PropTypes.number,
+}
