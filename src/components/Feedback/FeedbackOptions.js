@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { StyledButton } from './FeedbackOptions.styled';
 import { HiDotsCircleHorizontal } from 'react-icons/hi';
 
-const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <>
       {options.map(option => {
